@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <style>
-        [v-cloak]{
+        [v-cloak] {
             display: none;
         }
     </style>
 </head>
 
 <body>
-    <div id="app">
+    <!-- <div id="app">
         <div>{{msg}}</div>
         <div v-text='msg'></div>
         <div v-pre>{{msg}}</div>
+    </div> -->
+    <div id="app-2">
+        <span v-bind:title="message">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>
     </div>
     <script type="text/javascript" src="js/vue.min.js"></script>
     <script>
-        var vm = new Vue({
-            el:'#app',
-            data:{
-                msg: 'Hello Vue',
-                msg1:'<h1>html<h1>'
+        // var vm = new Vue({
+        //     el: '#app',
+        //     data: {
+        //         msg: 'Hello Vue',
+        //         msg1: '<h1>html<h1>'
+        //     }
+        // })
+        var app2 = new Vue({
+            el: '#app-2',
+            data: {
+                message: '页面加载于 ' + new Date().toLocaleString()
             }
         })
     </script>
 </body>
+
 </html>
